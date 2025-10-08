@@ -22,10 +22,10 @@ public class SearchInventory {
                 String name = tokens[1];
                 double price = Double.parseDouble(tokens[2]);
                 Product product = new Product(name, id, price);
-                System.out.println(product.toString());
+                inventory.add(product);
             }
-// close the stream and release the resources
             inventoryBufReader.close();
+            System.out.println(inventory);
         } catch (Exception e) {
             System.err.println("ERROR");
         }
